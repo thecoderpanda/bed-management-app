@@ -18481,6 +18481,15 @@ p {
   font-weight: 600;
   text-transform: uppercase;
 }
+.heading-title-white{
+  letter-spacing: 0.025em;
+  font-size: 1.375rem;
+  font-weight: 600;
+  color:white;
+  padding-right:30px;
+  padding-bottom:10px;
+  text-transform: uppercase;
+}
 
 .heading-section {
   letter-spacing: 0.025em;
@@ -20680,6 +20689,10 @@ pre>code.highlight {
 
 .ct-footer-links li+li {
   margin-left: 1rem;
+}
+.column-side-padding {
+padding-top:10px;
+margin-top:10px;
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */

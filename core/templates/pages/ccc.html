@@ -1,6 +1,9 @@
 {% extends 'layouts/base.html' %}
 
-{% block title %} Tables {% endblock title %}
+{% block title %} CCC Admin Panel {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
 
@@ -8,14 +11,90 @@
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
       <div class="container-fluid">
         <div class="header-body">
-          
+          <div class="col-lg-7 col-md-10">
+            <h1 class="display-2 text-white">Hello, {{ request.user.username }}</h1>
+            <p class="text-white mt-0 mb-5">This is the master Dashboard for Covid Care Centres. You can Manage the Followings</p>
+          </div>
+          <!-- CCC Welcome Dashboard-->
+          <!-- Card stats -->
+          <div class="row">
+           <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0"></h5>
+                    <a href="/ccc-patients.html"> <span class="h2 font-weight-bold mb-0">Check Patient Details at CCC</span> </a> 
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-users"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0"></h5>
+                      <a href="ccc-testings.html"><span class="h2 font-weight-bold mb-0">Check Testings Results at CCC</span> </a>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                        <i class="fas fa-chart-pie"></i>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0"></h5>
+                  <a href="ccc-beds.html"> <span class="h2 font-weight-bold mb-0">Check Bed Availability at CCCs</span></a>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-grey text-white rounded-circle shadow">
+                        <i class="fas fa-rectangle"></i>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0"></h5>
+                      <span class="h2 font-weight-bold mb-0">Add / Delete CCCs</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                        <i class="fas fa-percent"></i>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="container-fluid mt--7">
-
-      <!-- Table -->
       <div class="row">
         <div class="col">
           <div class="card shadow">
@@ -26,33 +105,35 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
+                    
                     <th scope="col">Hospital Name / Code Name</th>
-                    <th scope="col">Totla Beds</th>
+                    <th scope="col">Total Beds in the hospital</th>
                     <th scope="col">Results</th>
                    <!-- <th scope="col"></th> -->  
                     <!-- <th scope="col">Percentage</th> -->
-                    <th scope="col">Transfer</th>
+                   <!-- <th scope="col">Transfer</th> -->
+                   <th scope="col"> Actions</th>
                   </tr>
                 </thead>
                 <tbody>
+                  
                   <tr>
                     <th scope="row">
                       <div class="media align-items-center">
                         <div class="media-body">
-                          <span class="mb-0 text-sm">Covid 19 MLA Hostel</span>
+                          <span class="mb-0 text-sm">Covid 19 MLA Hostel</span> <!-- Hospital name-->
                         </div>
                       </div>
                     </th>
                     <td>
-                      200
+                      200    <!-- No. of Beds  --> 
                     </td>
                     <td>
-                      <span class="badge badge-dot mr-4">
-                        <i class="bg-warning"></i> Negative
+                     10  <!-- Test Result Status-->
                       </span>
                     </td>
                    
-                    <td>
+                   <!-- <td> 
                       <div class="d-flex align-items-center">
                         <span class="mr-2">60%</span>
                         <div>
@@ -61,7 +142,7 @@
                           </div>
                         </div>
                       </div>
-                    </td>
+                    </td> -->
                     <td class="text-right">
                       <div class="dropdown">
                         <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -88,21 +169,10 @@
                       1300
                     </td>
                     <td>
-                      <span class="badge badge-dot">
-                        <i class="bg-success"></i> Positive
-                      </span>
+                      20
                     </td>
-                    
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">100%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
+
+
                     <td class="text-right">
                       <div class="dropdown">
                         <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -149,10 +219,7 @@
           </div>
         </div>
       </div>
-      <!-- Dark table -->
-      
       </div>
-
 
       {% include "includes/footer.html" %}
 
