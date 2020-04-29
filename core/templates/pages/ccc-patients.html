@@ -8,7 +8,7 @@
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
       <div class="container-fluid">
         <div class="header-body">
-          
+         <!--<a href="add-patients.html"><button class='buttondesign' href="add-patients.html"> Add Patients</button></a> -->
         </div>
       </div>
     </div>
@@ -29,7 +29,9 @@
                     
                     <th scope="col">Hospital Name / Code Name</th>
                     <th scope="col">Total Beds in the hospital</th>
+                    <th scope ="col">Total Patients Admitted</th>
                     <th scope="col">Results</th>
+                    <th>Time and Date</th>
                    <!-- <th scope="col"></th> -->  
                     <!-- <th scope="col">Percentage</th> -->
                    <!-- <th scope="col">Transfer</th> -->
@@ -49,11 +51,14 @@
                     <td>
                       200    <!-- No. of Beds  --> 
                     </td>
+                    <td>100</td>
                     <td>
                      10  <!-- Test Result Status-->
                       </span>
                     </td>
-                   
+                     <td>
+                      {% now "jS F Y H:i" %}
+                     </td>
                    <!-- <td> 
                       <div class="d-flex align-items-center">
                         <span class="mr-2">60%</span>
@@ -87,12 +92,17 @@
                       </div>
                     </th>
                     <td>
-                      1300
+                      300
+                    </td>
+                    <td>
+                      230
                     </td>
                     <td>
                       20
                     </td>
-
+                    <td>
+                      {% now "jS F Y H:i" %}
+                    </td>
 
                     <td class="text-right">
                       <div class="dropdown">
